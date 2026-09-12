@@ -1,0 +1,28 @@
+name: AR ContentPilot Automation
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "17 */4 * * *"
+      timezone: "Asia/Kuala_Lumpur"
+
+jobs:
+  contentpilot:
+    name: Run ContentPilot Automation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run ContentPilot automation
+        run: node scripts/contentpilot-automation.js

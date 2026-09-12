@@ -1,0 +1,192 @@
+/* ======================================================
+   AR CONTENTPILOT
+   THREADS CALLBACK
+====================================================== */
+
+.threads-callback-page {
+  min-height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(124, 92, 255, 0.08),
+      transparent 38%
+    ),
+    #08090d;
+}
+
+.threads-callback-card {
+  width: min(
+    460px,
+    100%
+  );
+
+  padding: 42px 38px;
+
+  text-align: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.07);
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  box-shadow:
+    0 30px 80px
+      rgba(0, 0, 0, 0.45);
+}
+
+.threads-callback-icon {
+  width: 64px;
+  height: 64px;
+
+  margin: 0 auto 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+}
+
+.threads-callback-icon.processing {
+  color: #a78bfa;
+
+  background:
+    rgba(124, 92, 255, 0.12);
+
+  border:
+    1px solid
+    rgba(124, 92, 255, 0.2);
+}
+
+.threads-callback-icon.success {
+  color: #34d399;
+
+  background:
+    rgba(52, 211, 153, 0.1);
+
+  border:
+    1px solid
+    rgba(52, 211, 153, 0.18);
+}
+
+.threads-callback-icon.error {
+  color: #fb7185;
+
+  background:
+    rgba(251, 113, 133, 0.1);
+
+  border:
+    1px solid
+    rgba(251, 113, 133, 0.18);
+}
+
+.threads-callback-spin {
+  animation:
+    threadsCallbackSpin 1s
+    linear infinite;
+}
+
+@keyframes threadsCallbackSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.threads-callback-kicker {
+  display: block;
+
+  margin-bottom: 9px;
+
+  color: #8b8fa3;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+}
+
+.threads-callback-card h1 {
+  margin: 0;
+
+  color: #f7f7fb;
+
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.threads-callback-card p {
+  margin: 12px auto 0;
+
+  max-width: 350px;
+
+  color: #9095a8;
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.threads-callback-card button {
+  margin-top: 24px;
+
+  height: 38px;
+
+  padding: 0 16px;
+
+  border: 0;
+  border-radius: 10px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c5cff,
+      #6947f5
+    );
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.threads-callback-card button:hover {
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 24px
+      rgba(124, 92, 255, 0.24);
+}
+
+@media (max-width: 640px) {
+  .threads-callback-page {
+    padding: 20px;
+  }
+
+  .threads-callback-card {
+    padding: 34px 24px;
+  }
+}
