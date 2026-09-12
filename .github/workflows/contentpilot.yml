@@ -1,3 +1,4 @@
+
 name: AR ContentPilot Automation
 
 on:
@@ -15,10 +16,7 @@ jobs:
     permissions:
       contents: read
 
-    env:
-      FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
-
-    steps:
+       steps:
 
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -32,5 +30,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run ContentPilot automation
-        run: node scripts/contentpilot-automation.js
+- name: Run ContentPilot automation
+  run: node scripts/contentpilot-automation.cjs
+
+  env:
+    FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
